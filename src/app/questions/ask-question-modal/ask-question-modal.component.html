@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Küsi küsimus!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="askQuestionForm" (ngSubmit)="createQuestion()">
+    <ion-row class="ask-question-form-row">
+      <ion-col size="12" class="ask-form-input-col">
+        <p class="ask-form-input-description">
+          Sisestage pealkiri ja proovige olla võimalikult täpne!
+        </p>
+        <ion-item class="ask-form-input-item">
+          <ion-label color="tertiary" position="floating" fixed="true"><b>Pealkiri</b></ion-label>
+          <ion-input color="dark" formControlName="title" placeholder="Sisestage pealkiri siia...." type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" class="ask-form-input-col">
+        <p class="ask-form-input-description">
+          Sisestage enda küsimus siia ja proovige võimalikult täpselt oma probleem lahti seletada!
+        </p>
+        <ion-item class="ask-form-input-item">
+          <ion-label color="tertiary" position="floating" fixed="true"><b>Kirjeldus</b></ion-label>
+          <ion-textarea rows="3" color="dark" formControlName="description" auto-grow="true" placeholder="Sisestage kirjeldus siia...." required></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button expand="block" color="tertiary" size="large" type="submit">Küsi!</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

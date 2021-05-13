@@ -1,0 +1,22 @@
+<ion-header class="categories-listing-main-header">
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+  </ion-header>
+
+
+  <div class="container">
+    <ion-card class="category-card" style="--background:{{category.color}}" [routerLink]="['/learn', category.slug]" *ngFor="let category of categories">
+      <ion-card-header>
+        <ion-card-subtitle>Raamistik</ion-card-subtitle>
+        <ion-card-title>
+          {{category.title}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Küsige küsimusi ja vastake neile!
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
